@@ -5,9 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_library(arabicdigits SHARED arabic_digits_counter.cpp)
+add_library(arabicdigits SHARED ${CMAKE_SOURCE_DIR}/src/arabic_digits_counter.cpp)
 add_library(libs::arabicdigits ALIAS arabicdigits)   #ALIAS need to check name of lib
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/src/main.cpp)
 target_link_libraries(${PROJECT_NAME} PRIVATE libs::arabicdigits)
 
 
